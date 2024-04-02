@@ -4,19 +4,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.elasticsearch</groupId>
-    <artifactId>analysis-thaichub2</artifactId>
-    <version>7.6.2</version>
+    <groupId>org.opensearch</groupId>
+    <artifactId>opensearch-analysis-thaichub2</artifactId>
+    <version>2.5.0</version>
     <url>http://maven.apache.org</url>
     <packaging>jar</packaging>
     <properties>
-        <elasticsearch.version>7.6.2</elasticsearch.version>
+        <opensearch.version>2.5.0</opensearch.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>13</maven.compiler.source>
-        <maven.compiler.target>13</maven.compiler.target>
-        <elasticsearch.plugin.name>analysis-thaichub2</elasticsearch.plugin.name>
-        <elasticsearch.plugin.classname>org.elasticsearch.plugin.analysis.thaichub2.AnalysisThaiChub2Plugin</elasticsearch.plugin.classname>
-        <elasticsearch.plugin.jvm>true</elasticsearch.plugin.jvm>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <opensearch.plugin.name>analysis-thaichub2</opensearch.plugin.name>
+        <opensearch.plugin.classname>org.opensearch.plugin.analysis.thaichub2.AnalysisThaiChub2Plugin</opensearch.plugin.classname>
+        <opensearch.plugin.jvm>true</opensearch.plugin.jvm>
     </properties>
     <distributionManagement>
         <snapshotRepository>
@@ -49,9 +49,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.elasticsearch</groupId>
-            <artifactId>elasticsearch</artifactId>
-            <version>${elasticsearch.version}</version>
+            <groupId>org.opensearch</groupId>
+            <artifactId>opensearch</artifactId>
+            <version>${opensearch.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -95,6 +95,13 @@
         </dependency>
     </dependencies>
     <build>
+        <extensions>
+            <extension>
+                <groupId>com.github.platform-team</groupId>
+                <artifactId>aws-maven</artifactId>
+                <version>6.0.0</version>
+            </extension>
+        </extensions>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

@@ -1,7 +1,7 @@
 package org.elasticseach.index.analysis;
 
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
-import org.elasticsearch.index.analysis.ThaiChub2Tokenizer;
+import org.opensearch.index.analysis.ThaiChub2Tokenizer;
 import org.junit.Assert;
 import org.testng.annotations.Test;
 

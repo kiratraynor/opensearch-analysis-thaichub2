@@ -1,22 +1,22 @@
 version: '3'
 services:
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.6.2
-    container_name: elasticsearch
+    image: opensearchproject/opensearch:2.5.0
+    container_name: opensearch
     environment:
       - discovery.type=single-node
     ports:
       - 9200:9200
       - 9300:9300
     volumes:
-      - .:/elasticsearch-analysis-thaichub2
-    command: sh -c './bin/elasticsearch-plugin install --batch file:///elasticsearch-analysis-thaichub2/target/releases/analysis-thaichub2-7.6.2.zip && exec /usr/local/bin/docker-entrypoint.sh elasticsearch'
-  kibana:
-    image: docker.elastic.co/kibana/kibana:7.6.2
-    container_name: kibana
+      - .:/opensearch-analysis-thaichub2
+    command: sh -c './bin/opensearch-plugin install --batch file:///opensearch-analysis-thaichub2/target/releases/analysis-thaichub2-2.5.0.zip && exec /usr/local/bin/docker-entrypoint.sh opensearch'
+  opensearch-dashboards:
+    image: opensearchproject/opensearch-dashboards:2.5.0
+    container_name: opensearch-dashboards
     depends_on:
-      - elasticsearch
+      - opensearch
     ports:
       - 5601:5601
     links:
-      - elasticsearch:elasticsearch
+      - opensearch:opensearch
