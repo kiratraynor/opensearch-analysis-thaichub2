@@ -7,7 +7,7 @@
     <groupId>org.opensearch</groupId>
     <artifactId>opensearch-analysis-thaichub2</artifactId>
     <version>2.5.0</version>
-    <url>http://maven.apache.org</url>
+    <url>https://github.com/kiratraynor/opensearch-analysis-thaichub2</url>
     <packaging>jar</packaging>
     <properties>
         <opensearch.version>2.5.0</opensearch.version>
