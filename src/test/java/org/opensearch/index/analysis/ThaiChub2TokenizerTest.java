@@ -1,4 +1,4 @@
-package org.elasticseach.index.analysis;
+package org.opensearch.index.analysis;
 
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 import org.opensearch.index.analysis.ThaiChub2Tokenizer;
